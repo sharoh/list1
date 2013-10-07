@@ -1,0 +1,84 @@
+var shuffleSequence = seq(anyType);
+var practiceItemTypes = ["practice"];
+
+var defaults = [
+    "Separator", {
+        hideProgressBar: true,
+	transfer: 1000,
+        normalMessage: "Please wait for the next sentence.",
+        errorMessage: "Wrong. Please wait for the next sentence."
+    },
+    "DashedSentence", {
+        hideProgressBar: true, 
+	mode: "self-paced reading"
+    },
+    "AcceptabilityJudgment", {
+        as: ["1", "2", "3", "4", "5", "6", "7"],
+        presentAsScale: true,
+        instructions: "Use number keys or click boxes to answer.",
+        leftComment: "(Bad)", rightComment: "(Good)"
+    },
+    "Question", {
+	as: ["Yes", "No"],
+	hideProgressBar: true,
+	hasCorrect: true
+    },
+    "Message", {
+        hideProgressBar: true
+    },
+    
+    "FlashSentence", {
+	hideProgressBar: true
+   
+    },
+    "Form", {
+	hideProgressBar: true,
+        continueOnReturn: true,
+        saveReactionTime: true
+    }
+];
+
+var items = [
+
+   //DashedSentence Controller separates at |
+
+      ["intro", "Form", {
+        html: { include: "example_intro.html" },} ],
+
+    [["itemF42b3",42],"FlashSentence",{s: "raider ----- fader ----- wader"},"DashedSentence", {s: "The trader|remarked|that|the merchant|enjoyed|the sale|of the wool sweaters."},"Question",{q: "Were there wool pants on sale?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF131c1",131],"DashedSentence", {s: "It was the foreman|who|was new|that|examined|the latest blueprint|at the construction sight."},"Question",{q: "Was the foreman new?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF3a1",3],"FlashSentence",{s: "mule ----- pool ----- drool"},"DashedSentence", {s: "The janitor|mumbled|that|the plumber|detested|the drain|in the elementary school."},"Question",{q: "Was the drain in the school?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF33b3",33],"FlashSentence",{s: "windshield ----- pipe ----- wheat"},"DashedSentence", {s: "The butcher|admitted|that|the axe|horrified|the chicken|that he slaughtered."},"Question",{q: "Did the farmer slaughter the chicken?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF23a1",23],"FlashSentence",{s: "rant ----- chant ----- plant"},"DashedSentence", {s: "The herbalist|whispered|that|the pharmacist|complained|that|the nurse rejected|the remedies."},"Question",{q: "Were the remedies rejected by the nurse?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF123b3",123],"FlashSentence",{s: "earth ----- bird ----- squash"},"DashedSentence", {s: "It was the prostitute|who|was jaded|that|applied|the gaudy lipstick|in the nightclub restroom."},"Question",{q: "Was the lipstick applied at home?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF142d3",142],"DashedSentence", {s: "It was the head priest|who|visited from Italy|that|delivered|the weekly sermon|at the local chapel."},"Question",{q: "Did the parishioner deliver the sermon?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF69c1",69],"DashedSentence", {s: "The friend|remarked|that|the portrait|comforted|the widow|during her deepest grief."},"Question",{q: "Did the friend remark about the portrait?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF127c1",127],"DashedSentence", {s: "It was the pilot|who|was impertinent|that|presented|the overstuffed suitcase|to the tired stewardess."},"Question",{q: "Was the suitcase overstuffed?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF117a1",117],"FlashSentence",{s: "string ----- arrow ----- poison"},"DashedSentence", {s: "It was the cowboy|who|was handsome|that|twirled|the lucky rope|during the rodeo event."},"Question",{q: "Was the rope twirled by the cowboy?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF77c1",77],"DashedSentence", {s: "The pusher|alleged|that|the dealer|indicated|that|the druggies appreciated the pills."},"Question",{q: "Was it the druggies that appreciated the pills?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF27a1",27],"FlashSentence",{s: "tanner ----- manner ----- scanner"},"DashedSentence", {s: "The patriots|concluded|that|the monarchists|suspected|that|the banner disgusted|the anarchist."},"Question",{q: "Was it the monarchists who suspected that the banner was disgusting?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF31b3",31],"FlashSentence",{s: "flat ----- lot ----- space"},"DashedSentence", {s: "The coach|noted|that|the trophy|annoyed|the loser|after the reward ceremony."},"Question",{q: "Did the trophy annoy the winner?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF36b3",36],"FlashSentence",{s: "chief ----- leaf ----- thief"},"DashedSentence", {s: "The family|noted|that|the youngster|enjoyed|the voyage|to the Galapagos Islands."},"Question",{q: "Did the family voyage to the Virgin Islands?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF137d3",137],"DashedSentence", {s: "It was the daughter|who|was sleepy|that|ignored|the alarm clock|that rang for five minutes."},"Question",{q: "Did the alarm clock ring for ten minutes?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF100d3",100],"DashedSentence", {s: "The ranger|realized|that|the guide|knew|that|the cliff frightened|the hikers."},"Question",{q: "Was it the ranger who was frightened?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF140d3",140],"DashedSentence", {s: "It was the gentleman|who|was stylish|that|identified|the priceless vase|at the state auction."},"Question",{q: "Did a stylish lady identify the vase?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF103d3",103],"DashedSentence", {s: "The existentialist|remembered|that|the radical|said|that|the argument infuriated|the logician."},"Question",{q: "Did the argument infuriate the existentialist?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF21a1",21],"FlashSentence",{s: "mooch ----- hooch ----- smooch"},"DashedSentence", {s: "The sergeant|perceived|that|the criminal|realized|that|the victim detested|the motive."},"Question",{q: "Was it the victim who detested the motive?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF16a1",16],"FlashSentence",{s: "tag ----- cavern ----- bottle"},"DashedSentence", {s: "The innkeeper|remarked|that|the flame|fascinated|the moth|who was dancing|around it."},"Question",{q: "Was the moth dancing around the flame?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF96d3",96],"DashedSentence", {s: "The physician|verified|that|the epileptic|abhorred|the convulsions|that he frequently|experienced."},"Question",{q: "Did the manic-depressive patient abhor the convulsions?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF112a1",112],"FlashSentence",{s: "pest ----- test ----- west"},"DashedSentence", {s: "It was the salesgirl|who|was talkative|that|sprayed|the spicy cologne|that eventually leaked|behind the counter."},"Question",{q: "Was the salesgirl talkative?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF28b3",28],"FlashSentence",{s: "brave ----- shave ----- pave"},"DashedSentence", {s: "The knave|exclaimed|that|the mirror|scared|the queen|of the French chateau."},"Question",{q: "Did the darkness scare the queen?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF24a1",24],"FlashSentence",{s: "shake ----- urn ----- pajamas"},"DashedSentence", {s: "The officer|recalled|that|the teenager|noticed|that|the baby desired|the bottle."},"Question",{q: "Was it the officer who recalled?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF120b3",120],"FlashSentence",{s: "hose ----- pose ----- close"},"DashedSentence", {s: "It was the fairy godmother|who|appeared|that|bestowed|the magic wand|in the rose gardens."},"Question",{q: "Did Cinderella bestow the magic wand?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF64c1",64],"DashedSentence", {s: "The mayor|maintained|that|the deal|angered|the union|from the transit authority."},"Question",{q: "Was it the union that was angered?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF114a1",114],"FlashSentence",{s: "praised ----- dazed ----- phrased"},"DashedSentence", {s: "It was the lion tamer|who|was fearless|that|raised|the wooden chair|during the circus|performance."},"Question",{q: "Did the lion tamer raise the chair?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF47b3",47],"FlashSentence",{s: "sketch ----- telephone ----- crib"},"DashedSentence", {s: "The mother|attested|that|the baker|understood|that|the cookies excited|the boy."},"Question",{q: "Was it the mother that was excited by the cookies?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF94d3",94],"DashedSentence", {s: "The schoolgirl|inferred|that|the lad|feared|the spanking|that the schoolmaster|administered."},"Question",{q: "Did the lad give the spanking?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF81c1",81],"DashedSentence", {s: "The hikers|supposed|that|the ranger|understood|that|the bench comforted the straggler."},"Question",{q: "Did the bench comfort the straggler?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF48b3",48],"FlashSentence",{s: "dapper ----- wrapper ----- snapper"},"DashedSentence", {s: "The trapper|suspected|that|the developers|knew|that|the dam protected|the beaver."},"Question",{q: "Did the trapper protect the beaver?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF84d3",84],"DashedSentence", {s: "The teenager|presumed|that|the pistol|alarmed|the classmates|at whom it was pointed."},"Question",{q: "Did the teenager point a knife at his classmates?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF141d3",141],"DashedSentence", {s: "It was the actor|who|starred in the movie|who|supported|the charity|during the T.V. telethon."},"Question",{q: "Was the model arrested today?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF98d3",98],"DashedSentence", {s: "The speculator|believed|that|the investor|approved of|the capital|that the company gained."},"Question",{q: "Did the company lose capital?"},"Form",{ html: { include: "recall.html" }},],
+    [["itemF79c1",79],"DashedSentence", {s: "The priest|presumed|that|the hedonist|understood|that|the lifestyle offended the nun."},"Question",{q: "Was the lifestyle offensive to the nun?"},"Form",{ html: { include: "recall.html" }},],
+
+    ];
